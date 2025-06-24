@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Metrics Input - Sports Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="extended-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Sport Board</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="players.html" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Players</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="teams.html" class="nav-link">
+                            <i class="fas fa-user-friends"></i>
+                            <span>Teams</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="matches.html" class="nav-link">
+                            <i class="fas fa-trophy"></i>
+                            <span>Matches</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="training.html" class="nav-link">
+                            <i class="fas fa-dumbbell"></i>
+                            <span>Training</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="health-metrics-input.html" class="nav-link">
+                            <i class="fas fa-heart-pulse"></i>
+                            <span>Health</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-content">
+                    <h1 class="welcome-title">Health Metrics Input</h1>
+                    <div class="user-actions">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <div class="user-avatar">
+                            <img src="https://via.placeholder.com/40x40/8B5CF6/ffffff?text=A" alt="User Avatar">
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <div class="health-input-container">
+                    <form id="healthMetricsForm" class="health-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="systolic">Systolic Blood Pressure (mmHg)</label>
+                                <input type="number" id="systolic" class="form-input" placeholder="Enter Systolic" min="80" max="200">
+                            </div>
+                            <div class="form-group">
+                                <label for="diastolic">Diastolic Blood Pressure (mmHg)</label>
+                                <input type="number" id="diastolic" class="form-input" placeholder="Enter Diastolic" min="40" max="120">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="heartRate">Heart Rate (bpm)</label>
+                                <input type="number" id="heartRate" class="form-input" placeholder="Enter Heart Rate" min="40" max="200">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="height">Height (cm)</label>
+                                <input type="number" id="height" class="form-input" placeholder="Enter Height" min="100" max="250" step="0.1">
+                            </div>
+                            <div class="form-group">
+                                <label for="weight">Weight (kg)</label>
+                                <input type="number" id="weight" class="form-input" placeholder="Enter Weight" min="30" max="200" step="0.1">
+                            </div>
+                        </div>
+
+                        <div class="bmi-section">
+                            <button type="button" class="btn-secondary" onclick="calculateBMI()">
+                                <i class="fas fa-calculator"></i> Calculate BMI
+                            </button>
+                            <div id="bmiResult" class="bmi-result"></div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="bodyTemp">Body Temperature (°C)</label>
+                                <input type="number" id="bodyTemp" class="form-input" placeholder="Enter Body Temperature" min="35" max="42" step="0.1">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="oxygenLevel">Oxygen Level (%)</label>
+                                <input type="number" id="oxygenLevel" class="form-input" placeholder="Enter Oxygen Level" min="80" max="100">
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-primary" onclick="generateReport()">
+                                <i class="fas fa-file-medical"></i> Generate Report
+                            </button>
+                            <button type="button" class="btn-secondary" onclick="showGraphs()">
+                                <i class="fas fa-chart-line"></i> Show Graphs
+                            </button>
+                        </div>
+                    </form>
+
+                    <div id="healthSummary" class="health-summary">
+                        <h3>Health Summary</h3>
+                        <div class="summary-grid">
+                            <div class="summary-card">
+                                <div class="summary-icon">
+                                    <i class="fas fa-heartbeat"></i>
+                                </div>
+                                <div class="summary-info">
+                                    <h4>Blood Pressure</h4>
+                                    <p id="bpSummary">--/-- mmHg</p>
+                                    <span id="bpStatus" class="status-indicator">Not measured</span>
+                                </div>
+                            </div>
+                            <div class="summary-card">
+                                <div class="summary-icon">
+                                    <i class="fas fa-heart"></i>
+                                </div>
+                                <div class="summary-info">
+                                    <h4>Heart Rate</h4>
+                                    <p id="hrSummary">-- bpm</p>
+                                    <span id="hrStatus" class="status-indicator">Not measured</span>
+                                </div>
+                            </div>
+                            <div class="summary-card">
+                                <div class="summary-icon">
+                                    <i class="fas fa-weight"></i>
+                                </div>
+                                <div class="summary-info">
+                                    <h4>BMI</h4>
+                                    <p id="bmiSummary">--</p>
+                                    <span id="bmiStatus" class="status-indicator">Not calculated</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="health-input-script.js"></script>
+</body>
+</html>
+

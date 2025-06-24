@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Profile - Sports Dashboard</title>
+    <link rel="stylesheet" href="profile-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Sport Board</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Sport Board</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="user-profile.html" class="nav-link">
+                            <i class="fas fa-user"></i>
+                            <span>User Profile</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="sport-profile.html" class="nav-link">
+                            <i class="fas fa-trophy"></i>
+                            <span>Sport Profile</span>
+                        </a>
+                    </li>
+                    <!-- Resto del menú igual que antes -->
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-content">
+                    <h1 class="welcome-title">Sport Profile</h1>
+                    <div class="user-actions">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <div class="user-avatar">
+                            <img src="https://via.placeholder.com/40x40/8B5CF6/ffffff?text=A" alt="User Avatar">
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <div class="sport-profile-container">
+                    <div class="stats-overview">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>24</h3>
+                                <p>Competitions Won</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>87</h3>
+                                <p>Total Matches</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>92%</h3>
+                                <p>Win Rate</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h3>4.8</h3>
+                                <p>Rating</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sport-sections">
+                        <div class="section-card">
+                            <h3><i class="fas fa-running"></i> Primary Sports</h3>
+                            <div class="sports-list">
+                                <div class="sport-item active">
+                                    <span class="sport-name">Tennis</span>
+                                    <span class="sport-level">Professional</span>
+                                </div>
+                                <div class="sport-item">
+                                    <span class="sport-name">Basketball</span>
+                                    <span class="sport-level">Advanced</span>
+                                </div>
+                                <div class="sport-item">
+                                    <span class="sport-name">Swimming</span>
+                                    <span class="sport-level">Intermediate</span>
+                                </div>
+                            </div>
+                            <button class="btn-add">
+                                <i class="fas fa-plus"></i> Add Sport
+                            </button>
+                        </div>
+
+                        <div class="section-card">
+                            <h3><i class="fas fa-target"></i> Current Goals</h3>
+                            <div class="goals-list">
+                                <div class="goal-item">
+                                    <div class="goal-info">
+                                        <h4>Win Regional Championship</h4>
+                                        <p>Target: December 2024</p>
+                                    </div>
+                                    <div class="goal-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 75%"></div>
+                                        </div>
+                                        <span>75%</span>
+                                    </div>
+                                </div>
+                                <div class="goal-item">
+                                    <div class="goal-info">
+                                        <h4>Improve Serve Speed</h4>
+                                        <p>Target: 200 km/h</p>
+                                    </div>
+                                    <div class="goal-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 60%"></div>
+                                        </div>
+                                        <span>60%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-card">
+                            <h3><i class="fas fa-calendar-alt"></i> Training Schedule</h3>
+                            <div class="schedule-grid">
+                                <div class="schedule-day">
+                                    <h4>Monday</h4>
+                                    <div class="training-session">
+                                        <span class="time">09:00 - 11:00</span>
+                                        <span class="activity">Tennis Practice</span>
+                                    </div>
+                                    <div class="training-session">
+                                        <span class="time">16:00 - 17:30</span>
+                                        <span class="activity">Fitness Training</span>
+                                    </div>
+                                </div>
+                                <div class="schedule-day">
+                                    <h4>Tuesday</h4>
+                                    <div class="training-session">
+                                        <span class="time">08:00 - 10:00</span>
+                                        <span class="activity">Swimming</span>
+                                    </div>
+                                </div>
+                                <div class="schedule-day">
+                                    <h4>Wednesday</h4>
+                                    <div class="training-session">
+                                        <span class="time">09:00 - 11:00</span>
+                                        <span class="activity">Tennis Match</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-card">
+                            <h3><i class="fas fa-user-friends"></i> Coaches & Team</h3>
+                            <div class="team-list">
+                                <div class="team-member">
+                                    <img src="https://via.placeholder.com/50x50/8B5CF6/ffffff?text=JD" alt="Coach">
+                                    <div class="member-info">
+                                        <h4>John Davis</h4>
+                                        <p>Head Coach</p>
+                                    </div>
+                                    <button class="contact-btn">
+                                        <i class="fas fa-envelope"></i>
+                                    </button>
+                                </div>
+                                <div class="team-member">
+                                    <img src="https://via.placeholder.com/50x50/8B5CF6/ffffff?text=SM" alt="Trainer">
+                                    <div class="member-info">
+                                        <h4>Sarah Miller</h4>
+                                        <p>Fitness Trainer</p>
+                                    </div>
+                                    <button class="contact-btn">
+                                        <i class="fas fa-envelope"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="sport-profile-script.js"></script>
+</body>
+</html>

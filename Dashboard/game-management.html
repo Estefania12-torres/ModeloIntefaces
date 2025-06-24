@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Management - Sports Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="extended-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Sport Board</span>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="teams.html" class="nav-link">
+                            <i class="fas fa-users"></i>
+                            <span>Teams</span>
+                        </a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="game-management.html" class="nav-link">
+                            <i class="fas fa-gamepad"></i>
+                            <span>Games</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="players.html" class="nav-link">
+                            <i class="fas fa-user-friends"></i>
+                            <span>Players</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reports.html" class="nav-link">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-content">
+                    <h1 class="welcome-title">Game Management</h1>
+                    <div class="user-actions">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <div class="user-avatar">
+                            <img src="https://via.placeholder.com/40x40/8B5CF6/ffffff?text=A" alt="User Avatar">
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <div class="game-management-container">
+                    <div class="game-form-section">
+                        <div class="section-header">
+                            <h2>Game Management</h2>
+                            <p>Manage game details and schedules</p>
+                        </div>
+
+                        <form id="gameForm" class="game-form">
+                            <div class="form-group">
+                                <label for="gameName">Game Name</label>
+                                <input type="text" id="gameName" class="form-input" placeholder="Enter game name">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="startTime">Start Time</label>
+                                    <input type="datetime-local" id="startTime" class="form-input">
+                                </div>
+                                <div class="form-group">
+                                    <label for="endTime">End Time</label>
+                                    <input type="datetime-local" id="endTime" class="form-input">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="currentStatus">Current Status</label>
+                                <select id="currentStatus" class="form-input">
+                                    <option value="">Select Status</option>
+                                    <option value="scheduled">Scheduled</option>
+                                    <option value="in-progress">In Progress</option>
+                                    <option value="completed">Completed</option>
+                                    <option value="cancelled">Cancelled</option>
+                                    <option value="postponed">Postponed</option>
+                                </select>
+                            </div>
+
+                            <div class="scoreboard-section">
+                                <button type="button" class="btn-secondary scoreboard-btn">
+                                    <i class="fas fa-scoreboard"></i> Access Scoreboard (Marker)
+                                </button>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="button" class="btn-primary" onclick="updateGameStatus()">
+                                    <i class="fas fa-save"></i> Update Game Status
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="scheduled-games-section">
+                        <h2>Scheduled Games</h2>
+                        <div class="games-list">
+                            <div class="game-item" onclick="selectGame(this)">
+                                <div class="game-info">
+                                    <h4>Soccer Match: Team A vs Team B</h4>
+                                    <p class="game-time">10:00 AM - 12:00 PM</p>
+                                </div>
+                                <div class="game-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
+                            <div class="game-item" onclick="selectGame(this)">
+                                <div class="game-info">
+                                    <h4>Basketball Game: Team C vs Team D</h4>
+                                    <p class="game-time">2:00 PM - 4:00 PM</p>
+                                </div>
+                                <div class="game-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
+                            <div class="game-item" onclick="selectGame(this)">
+                                <div class="game-info">
+                                    <h4>Volleyball Tournament: Finals</h4>
+                                    <p class="game-time">6:00 PM - 8:00 PM</p>
+                                </div>
+                                <div class="game-arrow">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="game-management-script.js"></script>
+</body>
+</html>

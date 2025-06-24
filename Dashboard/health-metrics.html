@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Metrics - Sports Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <!-- Sidebar igual que antes -->
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-content">
+                    <h1 class="welcome-title">Health Metrics</h1>
+                    <div class="user-actions">
+                        <button class="notification-btn">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <div class="user-avatar">
+                            <img src="https://via.placeholder.com/40x40/8B5CF6/ffffff?text=A" alt="User Avatar">
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-area">
+                <div class="health-dashboard">
+                    <div class="vital-signs">
+                        <div class="vital-card">
+                            <div class="vital-icon heart-rate">
+                                <i class="fas fa-heartbeat"></i>
+                            </div>
+                            <div class="vital-info">
+                                <h3>72 BPM</h3>
+                                <p>Heart Rate</p>
+                                <span class="status normal">Normal</span>
+                            </div>
+                        </div>
+                        <div class="vital-card">
+                            <div class="vital-icon blood-pressure">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <div class="vital-info">
+                                <h3>120/80</h3>
+                                <p>Blood Pressure</p>
+                                <span class="status normal">Normal</span>
+                            </div>
+                        </div>
+                        <div class="vital-card">
+                            <div class="vital-icon weight">
+                                <i class="fas fa-weight"></i>
+                            </div>
+                            <div class="vital-info">
+                                <h3>75 kg</h3>
+                                <p>Weight</p>
+                                <span class="status stable">Stable</span>
+                            </div>
+                        </div>
+                        <div class="vital-card">
+                            <div class="vital-icon bmi">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <div class="vital-info">
+                                <h3>22.5</h3>
+                                <p>BMI</p>
+                                <span class="status normal">Normal</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="charts-section">
+                        <div class="chart-card">
+                            <h3>Heart Rate Trend</h3>
+                            <canvas id="heartRateChart"></canvas>
+                        </div>
+                        <div class="chart-card">
+                            <h3>Weight Progress</h3>
+                            <canvas id="weightChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="health-records">
+                        <div class="records-card">
+                            <h3><i class="fas fa-clipboard-list"></i> Recent Records</h3>
+                            <div class="records-list">
+                                <div class="record-item">
+                                    <div class="record-date">Dec 15, 2024</div>
+                                    <div class="record-info">
+                                        <h4>Annual Physical Exam</h4>
+                                        <p>All vitals within normal range</p>
+                                    </div>
+                                    <div class="record-status">
+                                        <span class="status-badge completed">Completed</span>
+                                    </div>
+                                </div>
+                                <div class="record-item">
+                                    <div class="record-date">Dec 10, 2024</div>
+                                    <div class="record-info">
+                                        <h4>Blood Test Results</h4>
+                                        <p>Cholesterol: 180 mg/dL</p>
+                                    </div>
+                                    <div class="record-status">
+                                        <span class="status-badge normal">Normal</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="records-card">
+                            <h3><i class="fas fa-pills"></i> Medications</h3>
+                            <div class="medication-list">
+                                <div class="medication-item">
+                                    <div class="med-info">
+                                        <h4>Vitamin D3</h4>
+                                        <p>1000 IU daily</p>
+                                    </div>
+                                    <div class="med-schedule">
+                                        <span>Morning</span>
+                                    </div>
+                                </div>
+                                <div class="medication-item">
+                                    <div class="med-info">
+                                        <h4>Omega-3</h4>
+                                        <p>1000mg daily</p>
+                                    </div>
+                                    <div class="med-schedule">
+                                        <span>With meals</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="health-metrics-script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #734a91 0%, #a87bc7 50%, #e0b0ff 100%);
+    min-height: 100vh;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 280px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    margin: 20px;
+    margin-right: 0;
+    box-shadow: 0 8px 32px rgba(115, 74, 145, 0.3);
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    padding: 30px 25px 20px;
+    border-bottom: 1px solid rgba(115, 74, 145, 0.1);
+    background: linear-gradient(135deg, #1b003a, #230443);
+    border-radius: 20px 20px 0 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #f1d7ff;
+}
+
+.logo i {
+    font-size: 24px;
+    color: #e0b0ff;
+}
+
+.sidebar-nav {
+    padding: 20px 0;
+}
+
+.nav-list {
+    list-style: none;
+}
+
+.nav-item {
+    margin: 2px 15px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #572975;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    background: rgba(168, 123, 199, 0.15);
+    color: #734a91;
+    transform: translateX(5px);
+}
+
+.nav-item.active .nav-link {
+    background: linear-gradient(135deg, #734a91, #a87bc7);
+    color: white;
+    box-shadow: 0 4px 15px rgba(115, 74, 145, 0.4);
+}
+
+.nav-link i {
+    width: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.nav-item.logout {
+    margin-top: 20px;
+    border-top: 1px solid rgba(115, 74, 145, 0.1);
+    padding-top: 20px;
+}
+
+.nav-item.logout .nav-link:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    margin: 20px;
+    margin-left: 10px;
+    box-shadow: 0 8px 32px rgba(115, 74, 145, 0.3);
+    overflow: hidden;
+}
+
+.main-header {
+    background: linear-gradient(135deg, #1b003a, #340856, #572975);
+    padding: 30px 40px;
+    color: white;
+    position: relative;
+}
+
+.main-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(241,215,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(224,176,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.welcome-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.notification-btn {
+    background: rgba(241, 215, 255, 0.2);
+    border: 2px solid rgba(224, 176, 255, 0.3);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f1d7ff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.notification-btn:hover {
+    background: rgba(224, 176, 255, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(115, 74, 145, 0.3);
+}
+
+.user-avatar img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 3px solid #e0b0ff;
+    box-shadow: 0 4px 15px rgba(115, 74, 145, 0.2);
+}
+
+.content-area {
+    padding: 40px;
+    background: linear-gradient(145deg, #ffffff, #f1d7ff);
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.dashboard-card {
+    background: linear-gradient(145deg, #ffffff, #f1d7ff);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(115, 74, 145, 0.15);
+    border: 1px solid rgba(168, 123, 199, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.dashboard-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(135deg, #734a91, #a87bc7);
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(115, 74, 145, 0.25);
+    border-color: #a87bc7;
+}
+
+.dashboard-card h3 {
+    color: #572975;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.dashboard-card p {
+    color: #734a91;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-container {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        margin: 10px;
+        border-radius: 15px;
+    }
+    
+    .main-content {
+        margin: 10px;
+        border-radius: 15px;
+    }
+    
+    .main-header {
+        padding: 20px;
+    }
+    
+    .welcome-title {
+        font-size: 24px;
+    }
+    
+    .content-area {
+        padding: 20px;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+/* Scrollbar Styling */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: rgba(241, 215, 255, 0.3);
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(168, 123, 199, 0.5);
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(115, 74, 145, 0.7);
+}
+
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+
+  /* filtros ajustados para la nueva paleta púrpura */
+  filter: brightness(0.6) saturate(40%) contrast(80%) hue-rotate(20deg);
+  opacity: 0.25;
+  background-color: #f1d7ff; /* color de fondo base con la nueva paleta */
+}
