@@ -12,7 +12,8 @@ Ventana 4 - Disciplinas
 ![imagen](https://github.com/user-attachments/assets/69b2fc19-de23-4de4-baa2-c03bacf344bc)
 
 Ventana 5- Medicion de la Salud 
-![imagen](https://github.com/user-attachments/assets/5e1d225c-0087-4c62-b5b8-411c480bb107)
+![imagen](https://github.com/user-attachments/assets/bc8c8df8-6af3-4e6e-9726-2a3204da17e0)
 
 Ventana 6- Gestión de juegos
-![imagen](https://github.com/user-attachments/assets/92b9a5cc-96bf-41e3-ba77-b982f95d54b3)
+![imagen](https://github.com/user-attachments/assets/a66f7eaa-a922-4a4a-8bf1-30b1e7a6ac2c)
+
