@@ -1,6 +1,6 @@
 # ModeloIntefaces
 Ventana 1- Dashboard 
-![imagen](https://github.com/user-attachments/assets/c671be34-2e32-4c6d-96a8-df86b9ee9485)
+![imagen](https://github.com/user-attachments/assets/050f675e-9d31-48c5-a54a-ddeaeeb47b39)
 
 Ventana 2- Perfil-Usuario
 ![imagen](https://github.com/user-attachments/assets/67920f68-db93-45c0-9a3a-72896bc238c1)
